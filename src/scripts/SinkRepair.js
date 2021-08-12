@@ -1,7 +1,7 @@
 
 import { Requests } from "./Requests.js"  //access to requests() definition 
 
-export const SinkRepair = () => { //15. Run the returned html.  Call the Requests() function.  need to find Requests() definition
+export const SinkRepair = () => { //15. Run the returned html.  Call the Requests() function.  need to find Requests() definition on Requests.js
     return `
     <h1>Maude and Merle's Sink Repair</h1>
     <section class="serviceForm">
