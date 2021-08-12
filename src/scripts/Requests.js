@@ -2,11 +2,13 @@ import { getRequests } from "./dataAccess.js" //getRequests() definition shows i
 
 export const Requests = () => {  //16.  sees requests() function definition
     const requests = getRequests() //17.  instantiates variable 'requests' to reference the call of getRequests.  AKA variable 'requests' now references the map() copy of service requests data we stored as application state in step 12.
-
+    const requestListElement = (request) => {
+        return `<li>${request.description}</li>`
+    }
     let html = ` 
         <ul>
             ${
-                requests.map()
+                requests.map(requestListElement).join("") 
             }
         </ul>
     `
