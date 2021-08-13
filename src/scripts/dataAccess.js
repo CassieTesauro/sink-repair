@@ -22,3 +22,22 @@ export const getRequests = () => {  //13.  define getRequests().  purpose: retur
 }
 
 
+export const sendRequest = (userServiceRequest) => {  //26. sees sendRequest definition.  Functions takes in parameter 'userServiceRequest', AKA the object created in step 24
+    const fetchOptions = { //27. Instantiate variable fetchOtions 
+        method: "POST",  //28. Using the HTTP Request Method "POST", AKA telling the API to create something new using the data in parameter 'userServiceRequest'
+        headers: {
+            "Content-Type": "application/json"  //29.  New thing created in API will have a "Content-Type" header of "application/json"
+        },
+        body: JSON.stringify(userServiceRequest)  //30.  Take the JS object and convert it into a JSON string.  ???IS IT ENCODED???
+    }
+
+
+    return fetch(`${API}/requests`, fetchOptions)  //31. sendRequest() returns a fetch that takes in 2 parameters: the API url we referenced as API higher up in this module, and what we created above and referenced with fetchOptions(hey API, make something new and use this.  here's some info and a json string.) 
+        .then(response => response.json())  //32.  The promise made by the fetch in step 31 has a response.  Take that response and parse it.
+        .then(() => {
+
+        })
+}
+
+
+
