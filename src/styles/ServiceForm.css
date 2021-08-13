@@ -1,9 +1,32 @@
 @import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
 
+*  {
+    margin: 0;
+}
+
+html {
+    margin-left: 3em;
+    margin-right: 3em;
+}
+
+h1 {
+    padding-top: 1rem;
+    padding-bottom: .5rem;
+}
 #submitRequest {
     color: rgb(235, 230, 217);
     font-size: 12px;
     background-color: rgb(73, 83, 172);
     padding-top: 3px;
     padding-bottom: 3px;
+    margin-top: .5rem;
+    margin-bottom: 2rem;
+    
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
