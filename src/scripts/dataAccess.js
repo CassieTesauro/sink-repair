@@ -18,7 +18,7 @@ export const fetchRequests = () => { //5. define function fetchRequests. purpose
 }
 
 export const getRequests = () => {  //13.  define getRequests().  purpose: return service requests data we stored as application state in step 12.  
-   return applicationState.requests.map(request => ({...request})) 
+   return applicationState.requests.map(request => ({...request}))   //Map coppies the requests as one array. Spread operator breaks the array apart into 1 object per request.
 }
 
 
