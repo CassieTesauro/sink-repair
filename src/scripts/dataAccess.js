@@ -1,8 +1,12 @@
+
+
 //BIRD'S EYE VIEW: make an object to hold application state.  fetch the API requests state.  Store that external API state in applicaiton state
 
 const applicationState = {
     requests: []  //12.  store the data referenced by serviceRequests here.  
 }
+
+const mainContainer = document.querySelector("#container")
 
 const API = "http://localhost:8088" //7. see that API references a URL (url of where the API is online)
 
@@ -28,16 +32,16 @@ export const sendRequest = (userServiceRequest) => {  //26. sees sendRequest def
         headers: {
             "Content-Type": "application/json"  //29.  New thing created in API will have a "Content-Type" header of "application/json"
         },
-        body: JSON.stringify(userServiceRequest)  //30.  Take the JS object and convert it into a JSON string.  ???IS IT ENCODED???
+        body: JSON.stringify(userServiceRequest)  //30.  Take the JS object and convert it into a JSON string.  
     }
 
 
     return fetch(`${API}/requests`, fetchOptions)  //31. sendRequest() returns a fetch that takes in 2 parameters: the API url we referenced as API higher up in this module, and what we created above and referenced with fetchOptions(hey API, make something new and use this.  here's some info and a json string.) So now the API has our transient new request as JSON.
         .then(response => response.json())  //32.  The promise made by the fetch in step 31 has a response.  Take that response and parse it from JSON string into JS.
         .then(() => {  //33. Now that we have the parsed JS and state has changed, we tell sendRequest() function's fetch call to dispatch a new custom event after the POST operation has been completed.  Need to find customEvent's function definition (hint: main.js)
-            mainContainer.dispatchEvent(new CustomEvent("stateChanged"))  
+            mainContainer.dispatchEvent(new CustomEvent("stateChanged"))  //34. since mainContainer isn't defined on this module, I copied it onto this module from serviceForm.js.
         })
 }
 
-//QUESTION ABOUT CH 7, STEP 33- is the custom event's listener going on main or dataAccess?  chapter says both.
+
 

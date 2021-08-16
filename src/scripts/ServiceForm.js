@@ -1,3 +1,5 @@
+import { sendRequest } from "./dataAccess.js"  //so we can use the sendRequest(dataToSendToAPI) function call in this module
+
 //BIRDS EYE VIEW:  this module has a function defined to create the html request form.  The function will be called inside the SinkRepair() definition in SinkRepair.js.  A click event listener responds to the submit button being clicked and 
 
   
