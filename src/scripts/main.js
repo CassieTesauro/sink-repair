@@ -19,6 +19,14 @@ const render = () => {  //3. define render function.
 render()  //1. call the render function. need to find render() definition.
 
 
+mainContainer.addEventListener( //34.  we see that the custom events dispatch from step 33 is to re-render thae page now that our state has been updated.
+    "stateChanged",
+    customEvent => {
+        render()
+    }
+)
+
+
 //
 
 

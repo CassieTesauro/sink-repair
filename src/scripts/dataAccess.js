@@ -34,10 +34,10 @@ export const sendRequest = (userServiceRequest) => {  //26. sees sendRequest def
 
     return fetch(`${API}/requests`, fetchOptions)  //31. sendRequest() returns a fetch that takes in 2 parameters: the API url we referenced as API higher up in this module, and what we created above and referenced with fetchOptions(hey API, make something new and use this.  here's some info and a json string.) So now the API has our transient new request as JSON.
         .then(response => response.json())  //32.  The promise made by the fetch in step 31 has a response.  Take that response and parse it from JSON string into JS.
-        .then(() => {  //33. Take the parsed JS from step 32 and do something to it.  I'm guessing html?
-
+        .then(() => {  //33. Now that we have the parsed JS and state has changed, we tell sendRequest() function's fetch call to dispatch a new custom event after the POST operation has been completed.  Need to find customEvent's function definition (hint: main.js)
+            mainContainer.dispatchEvent(new CustomEvent("stateChanged"))  
         })
 }
 
-
+//QUESTION ABOUT CH 7, STEP 33- is the custom event's listener going on main or dataAccess?  chapter says both.
 
