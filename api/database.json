@@ -22,14 +22,7 @@
       "budget": "150",
       "neededBy": "2021-08-22",
       "id": 3
-    },
-    {
-      "description": "blah",
-      "address": "123 blah",
-      "budget": "100",
-      "neededBy": "2021-08-25",
-      "id": 4
-    },
+    },  
     {
       "description": "busted pipe",
       "address": "2087 Murfreesboro Rd.",

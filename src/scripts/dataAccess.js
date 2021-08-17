@@ -43,5 +43,13 @@ export const sendRequest = (userServiceRequest) => {  //26. sees sendRequest def
         })
 }
 
+export const deleteRequest = (id) => {  //38.  Added function to allow 1 specific request displayed on screen at a time to be deleted, then rerender page without deleted item.  Works with delete button 
+    return fetch(`${API}/requests/${id}`, { method: "DELETE" })
+        .then(
+            () => {
+                mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+            }
+        )
+}
 
 
